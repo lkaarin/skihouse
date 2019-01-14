@@ -1,0 +1,55 @@
+﻿@model Order;
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2>Check out now</h2>
+<p>Please enter your details.</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Checkout" method="post">
+    <h3>Ship to</h3>
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <h3>Address</h3>
+    <div class="form-group">
+        <label>Address1</label>
+        <input asp-for="Address1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Address2</label>
+        <input asp-for="Address2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Address3</label>
+        <input asp-for="Address3" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>State</label>
+        <input asp-for="State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Zip</label>
+        <input asp-for="Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Country</label>
+        <input asp-for="Country" class="form-control" />
+    </div>
+    <h3>Options</h3>
+    <div class="form-group">
+        <label>
+            <input asp-for="GiftWrap"/> Gift wrap whese items
+        </label>
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete order"/>
+    </div>
+</form>

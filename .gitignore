@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/SkiHouse.Web/bower_components/bootstrap
+/SkiHouse.Web/wwwroot/lib/jquery-validation-unobtrusive
+/SkiHouse.Web/wwwroot/lib/jquery-validation
+/SkiHouse.Web/wwwroot/lib/jquery
+/SkiHouse.Web/wwwroot/lib/fontawesome
+/SkiHouse.Web/wwwroot/lib/bootstrap

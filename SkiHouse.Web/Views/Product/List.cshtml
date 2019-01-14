@@ -1,0 +1,13 @@
+﻿@model ProductListViewModel
+
+<h3 class="text-center">Products</h3>
+<div class="card-inline">
+    @foreach (var item in Model.Items)
+    {
+        @Html.Partial("_ProductSummary", item)
+    }
+</div>
+<div page-model="@Model.PagingInfo" page-action="List"
+    page-classes-enabled="true"  page-class="page-link" page-class-selected="active"
+    class="pagination justify-content-end" pull-right></div>
+<a asp-action="AddProduct">Add new</a>

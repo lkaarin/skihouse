@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.css" />
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css"/>
+
+    <title>SkiHouse</title>
+</head>
+<body>
+    <div class="navbar navbar-light bg-light" role="navigation">
+        <a class="navbar-brand" href="/">SKI HOUSE</a>
+        <div class="navbar-nav">
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </div>
+    <div class="row panel">
+        <div id="categories" class="col-3">
+            @await Component.InvokeAsync("NavigationMenu")
+        </div>
+        <div id="categories" class="col-8">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

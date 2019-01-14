@@ -1,0 +1,22 @@
+﻿.page-link.active {
+    z-index: 1;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.card-inline .card{
+    float: left;
+    margin:1em;
+}
+
+.pagination {
+    clear: both;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}

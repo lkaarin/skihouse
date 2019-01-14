@@ -1,0 +1,19 @@
+﻿@model IEnumerable<string>
+<ul class="navbar nav flex-column nav-pills">
+    <li class="nav-item">
+        <a class="nav-link @(string.IsNullOrEmpty(ViewBag.SelectedCategory) ? "active" : "")"
+           asp-action="List"
+           asp-controller="Product"
+           asp-route-category="">ALL</a>
+    </li>
+    @foreach (var category in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link @(ViewBag.SelectedCategory == category ? "active" : "")"
+               asp-action="List"
+               asp-controller="Product"
+               asp-route-category="@category"
+               asp-route-page="1">@category.ToUpper()</a>
+        </li>
+    }
+</ul>
