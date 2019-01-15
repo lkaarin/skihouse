@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -10,12 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SkiHouse.Web.Data;
-using SkiHouse.Web.Data.Models;
 using SkiHouse.Web.Data.Repositories;
 using SkiHouse.Web.Data.Repositories.Interfaces;
 using SkiHouse.Web.Services;
 
-namespace SkiHouse.Web
+namespace SkiHouse.Web.Configuring
 {
     public class Startup
     {
@@ -58,15 +53,7 @@ namespace SkiHouse.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseStatusCodePages();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-            }
+            app.UseExceptionHandler("/Error");
 
             app.UseStaticFiles();
             app.UseStatusCodePages();
@@ -80,9 +67,6 @@ namespace SkiHouse.Web
                 routes.MapRoute(null, "{category}", new { Controller = "Product", action = "List", page = 1 });
                 routes.MapRoute("default", "{controller=Product}/{action=List}/{id?}");
             });
-
-            SeedData.EnsurePopulated(app);
-            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }
